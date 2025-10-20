@@ -27,22 +27,19 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Simple validation
+    // Client-side validation; prevent native submit only when invalid
     if (!formData.name || !formData.email || !formData.hotel) {
+      e.preventDefault();
       showNotification('Please fill in all required fields.', 'error');
       return;
     }
     
     if (!isValidEmail(formData.email)) {
+      e.preventDefault();
       showNotification('Please enter a valid email address.', 'error');
       return;
     }
-    
-    // Simulate form submission
-    showNotification('Thank you for your message! We will get back to you soon.', 'success');
-    setFormData({ name: '', email: '', hotel: '', message: '' });
+    // Allow native submit to FormSubmit when valid
   };
 
   return (
@@ -68,8 +65,8 @@ const Contact = () => {
                 <i className="fas fa-envelope"></i>
               </div>
               <div className="contact-details">
-                <h3>Email</h3>
-                <p><a href="mailto:spaskekl@gmail.com">spaskekl@gmail.com</a></p>
+                <h3>Company Email</h3>
+                <p><a href="mailto:jovan.spasojevic@360virtualtour.pro">jovan.spasojevic@360virtualtour.pro</a></p>
               </div>
             </div>
             <div className="contact-item">
@@ -78,12 +75,17 @@ const Contact = () => {
               </div>
               <div className="contact-details">
                 <h3>Service Area</h3>
-                <p>Worldwide virtual tour development</p>
+                <p>Serbia</p>
               </div>
             </div>
           </div>
           <div className="contact-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} action="https://formsubmit.co/jovan.spasojevic@360virtualtour.pro" method="POST">
+              {/* FormSubmit options */}
+              <input type="hidden" name="_subject" value="New inquiry from 360VirtualTour Pro website" />
+              <input type="hidden" name="_captcha" value="false" />
+              {/* Redirect back to the site after submission (optional) */}
+              <input type="hidden" name="_next" value="https://360virtualtour.pro/#contact" />
               <div className="form-group">
                 <label htmlFor="name">Name *</label>
                 <input

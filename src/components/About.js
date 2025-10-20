@@ -5,7 +5,7 @@ const About = () => {
     <section id="about" className="about">
       <div className="container">
         <div className="section-header">
-          <h2>About Our Team</h2>
+          <h2>About Us</h2>
           <p>Led by Jovan Spasojevic, we specialize exclusively in creating immersive virtual tours for hotels worldwide</p>
         </div>
         <div className="about-content">

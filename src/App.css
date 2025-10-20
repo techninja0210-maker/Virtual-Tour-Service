@@ -237,7 +237,7 @@
 /* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
-  bottom: 30px;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1394,7 +1394,7 @@
   }
 
   .scroll-indicator {
-    bottom: 20px;
+    bottom: 40px;
   }
 
   .scroll-mouse {
@@ -1507,6 +1507,13 @@
   .stats {
     flex-direction: column;
     gap: 1rem;
+  }
+}
+
+/* Hide scroll indicator on smaller screens or short viewports to avoid overlap */
+@media (max-width: 768px), (max-height: 700px) {
+  .scroll-indicator {
+    display: none;
   }
 }
 

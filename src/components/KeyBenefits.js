@@ -37,7 +37,7 @@ const KeyBenefits = () => {
     <section className="key-benefits">
       <div className="container">
         <div className="section-header">
-          <h2>The Main Benefits</h2>
+          <h2>Main Benefits</h2>
           <p>Discover how our virtual tour service transforms your hotel's online presence</p>
         </div>
         
