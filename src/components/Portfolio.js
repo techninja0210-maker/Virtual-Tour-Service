@@ -6,13 +6,13 @@ const Portfolio = () => {
       icon: 'fas fa-hotel',
       title: 'Hotel Monte Cristo Paris',
       description: 'Luxury hotel showcasing elegant rooms and amenities',
-      link: 'https://www.hotelmontecristoparis.com/virtual-tour'
+      link: 'https://my.matterport.com/show/?m=L51uMHKx5db'
     },
     {
       icon: 'fas fa-building',
       title: 'The Londoner',
       description: 'Modern hotel with contemporary design and city views',
-      link: 'https://www.thelondoner.com/about-us/virtual-tour'
+      link: 'https://invisionstudio.com/gallery/#architectural'
     },
     {
       icon: 'fas fa-tree',
@@ -25,6 +25,18 @@ const Portfolio = () => {
       title: 'Canary Santa Barbara',
       description: 'Beachfront hotel with coastal charm and modern amenities',
       link: 'https://visitingmedia.com/tt8/?ttid=kimpton-canary-hotel#/3d-model'
+    },
+    {
+      icon: 'fas fa-cube',
+      title: 'Matterport 3D Showcase',
+      description: 'Interactive 3D virtual tour experience with immersive navigation',
+      link: 'https://my.matterport.com/show/?m=L51uMHKx5db'
+    },
+    {
+      icon: 'fas fa-camera',
+      title: 'Architectural Photography Gallery',
+      description: 'Professional architectural photography and virtual tour portfolio',
+      link: 'https://invisionstudio.com/gallery/#architectural'
     }
   ];
 
