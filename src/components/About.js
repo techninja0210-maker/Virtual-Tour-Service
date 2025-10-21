@@ -19,8 +19,7 @@ const About = () => {
             
             <h3>Our Expertise</h3>
             <p>
-              Our team works with platforms like SeekBeak, Kuula, Panoee, TeliportMe, Concept3D, 3DVista Virtual 
-              Tour Suite, Matterport, and P4Panorama to create immersive, interactive experiences for users.
+            With a proven track record in transforming hotel marketing, our team specializes in creating immersive 360° virtual tours that boost engagement, drive bookings, and deliver a seamless, interactive experience tailored to each hotel's unique offerings.
             </p>
             
             <div className="stats">
