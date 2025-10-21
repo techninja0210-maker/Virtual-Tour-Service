@@ -38,7 +38,7 @@ const Footer = () => {
             <h3>Contact</h3>
             <p>Jovan Spasojevic</p>
             <p><a href="mailto:spaskekl@gmail.com">spaskekl@gmail.com</a></p>
-            <p>Worldwide Service</p>
+            <p>Worldwide 360 Virturl Tour</p>
           </div>
         </div>
         <div className="footer-bottom">

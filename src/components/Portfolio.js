@@ -24,7 +24,7 @@ const Portfolio = () => {
       icon: 'fas fa-sun',
       title: 'Canary Santa Barbara',
       description: 'Beachfront hotel with coastal charm and modern amenities',
-      link: 'https://visitingmedia.com/tt8/?ttid=kimpton-canary-hotel#/360?group=0&tour=0'
+      link: 'https://visitingmedia.com/tt8/?ttid=kimpton-canary-hotel#/3d-model'
     }
   ];
 
