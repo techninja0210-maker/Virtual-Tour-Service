@@ -12,7 +12,7 @@ const Portfolio = () => {
       icon: 'fas fa-building',
       title: 'The Londoner',
       description: 'Modern hotel with contemporary design and city views',
-      link: 'https://invisionstudio.com/gallery/#architectural'
+      link: 'https://my.matterport.com/show/?m=UvmnK4JXPT8&play=1&tour=3&ts=3&hl=0&pin=0'
     },
     {
       icon: 'fas fa-tree',
@@ -28,7 +28,7 @@ const Portfolio = () => {
     },
     {
       icon: 'fas fa-cube',
-      title: 'Matterport 3D Showcase',
+      title: 'W Rome',
       description: 'Interactive 3D virtual tour experience with immersive navigation',
       link: 'https://my.matterport.com/show/?m=L51uMHKx5db'
     },
@@ -36,7 +36,7 @@ const Portfolio = () => {
       icon: 'fas fa-camera',
       title: 'Architectural Photography Gallery',
       description: 'Professional architectural photography and virtual tour portfolio',
-      link: 'https://invisionstudio.com/gallery/#architectural'
+      link: 'https://my.matterport.com/show/?m=UvmnK4JXPT8&play=1&tour=3&ts=3&hl=0&pin=0'
     }
   ];
 
