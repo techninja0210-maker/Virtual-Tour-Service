@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all search engines to access all content
+Disallow:
+
+# Block access to build files and development files
+Disallow: /build/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /src/
+
+# Allow access to important files
+Allow: /images/
+Allow: /pdf_files/
+Allow: /static/
+
+# Host directive (replace with your actual domain)
+Host: https://your-domain.com

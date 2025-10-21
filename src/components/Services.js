@@ -60,8 +60,8 @@ const Services = () => {
     <section id="services" className="services">
       <div className="container">
         <div className="section-header">
-          <h2>Our Services</h2>
-          <p>Comprehensive virtual tour solutions for all types of hotels</p>
+          <h2>Professional Virtual Tour Development Services</h2>
+          <p>Comprehensive 360° virtual tour solutions for all types of hotels worldwide. Our virtual tour development services include professional photography, interactive navigation, and custom branding.</p>
         </div>
         <div className="services-grid">
           {services.map((service, index) => (
@@ -70,7 +70,7 @@ const Services = () => {
                 className="service-image"
                 onClick={() => openModal(service.image, service.title)}
               >
-                <img src={service.image} alt={service.title} />
+                <img src={service.image} alt={`${service.title} - Professional Virtual Tour Development Service`} />
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
