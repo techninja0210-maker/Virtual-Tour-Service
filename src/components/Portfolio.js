@@ -34,7 +34,7 @@ const Portfolio = () => {
     },
     {
       icon: 'fas fa-camera',
-      title: 'Architectural Photography Gallery',
+      title: 'Abu Dhabi, Classic 2 Bedroom',
       description: 'Professional architectural photography and virtual tour portfolio',
       link: 'https://my.matterport.com/show/?m=UvmnK4JXPT8&play=1&tour=3&ts=3&hl=0&pin=0'
     }
