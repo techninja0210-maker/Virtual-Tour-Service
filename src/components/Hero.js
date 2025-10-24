@@ -19,15 +19,15 @@ const Hero = () => {
       </div>
       <div className="hero-container">
         <div className="hero-content">
-          <p className="hero-tagline">
+          {/* <p className="hero-tagline">
             It leads from the online world to the physical space
-          </p>
-          <h1 className="hero-title">
+          </p> */}
+          {/* <h1 className="hero-title">
           Boost Your Booking Conversion Rate!
-          </h1>
-          <p className="hero-subtitle">
+          </h1> */}
+          {/* <p className="hero-subtitle">
             We create personalized virtual tours that bring your clients directly into your space. Stand out from the competition and grab the attention of your target audience!
-          </p>
+          </p> */}
           <button 
             className="btn btn-red"
             onClick={() => scrollToSection('contact')}
