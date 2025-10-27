@@ -4,12 +4,13 @@
   "description": "Professional virtual tour development service website built with React",
   "private": true,
   "dependencies": {
+    "framer-motion": "^10.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.5",
+    "react-intersection-observer": "^9.5.0",
     "react-router-dom": "^6.8.0",
-    "react-scripts": "5.0.1",
-    "framer-motion": "^10.12.0",
-    "react-intersection-observer": "^9.5.0"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,4 +47,3 @@
   "author": "Jovan Spasojevic <spaskekl@gmail.com>",
   "license": "MIT"
 }
-

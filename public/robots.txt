@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow all search engines to crawl the main content
+Allow: /images/
+Allow: /pdf_files/
+Allow: /static/
+
+# Sitemap location
+Sitemap: https://virtual-tour-service.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent overloading server)
+Crawl-delay: 1
