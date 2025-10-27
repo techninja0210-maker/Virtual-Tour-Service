@@ -42,17 +42,17 @@
   display: flex;
   align-items: center;
   gap: 60px;
-  background: white;
+  background: transparent;
   border-radius: 15px;
-  padding: 50px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  box-shadow: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: none;
 }
 
 .benefit-content:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
 }
 
 /* Left layout: image on left, text on right */
@@ -66,7 +66,7 @@
 }
 
 .benefit-image {
-  flex: 0 0 50%;
+  flex: 2;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -86,6 +86,9 @@
 .benefit-text {
   flex: 1;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .benefit-text h3 {

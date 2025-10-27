@@ -130,7 +130,7 @@ const Contact = () => {
                   placeholder="Tell us about your virtual tour project requirements..."
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn-submit">
                 Send Message
               </button>
             </form>

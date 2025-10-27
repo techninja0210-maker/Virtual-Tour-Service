@@ -45,7 +45,7 @@ const Portfolio = () => {
       <div className="container">
         <div className="section-header">
           <h2>Virtual Tour Now!</h2>
-          <p>Explore some of our recent virtual tour projects</p>
+          <p>Explore some of our virtual tour projects</p>
         </div>
         <div className="portfolio-grid">
           {portfolioItems.map((item, index) => (
