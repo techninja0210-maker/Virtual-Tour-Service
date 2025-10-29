@@ -5,48 +5,14 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
-Disallow: /_next/
-Disallow: /node_modules/
-Disallow: /.git/
-Disallow: /src/
-Disallow: /build/
-Disallow: /*.json$
-Disallow: /*.js$
-Disallow: /*.css$
 
 # Allow all search engines to crawl the main content
 Allow: /images/
 Allow: /pdf_files/
 Allow: /static/
-Allow: /public/
-
-# Specific bot instructions
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 2
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 2
-
-User-agent: YandexBot
-Allow: /
-Crawl-delay: 2
 
 # Sitemap location
 Sitemap: https://virtual-tour-service.com/sitemap.xml
 
-# Host directive (helps with canonical URLs)
-Host: https://virtual-tour-service.com
+# Crawl delay (optional - helps prevent overloading server)
+Crawl-delay: 1

@@ -4,7 +4,6 @@ import backgroundImage from './images/background.jpg';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from './components/SEO';
 import GoogleAnalytics from './components/GoogleAnalytics';
-import SEOMonitor from './components/SEOMonitor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 
@@ -68,7 +67,6 @@ function App() {
   return (
     <HelmetProvider>
       <GoogleAnalytics trackingId="GA_TRACKING_ID" />
-      <SEOMonitor />
       <SEO 
         structuredData={structuredData}
         title="Professional Virtual Tour Development Service"
