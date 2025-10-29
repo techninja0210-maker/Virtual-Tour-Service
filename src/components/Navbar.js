@@ -6,6 +6,7 @@ const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollTimeout, setScrollTimeout] = useState(null);
+  const [isAtTop, setIsAtTop] = useState(true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -38,6 +39,9 @@ const Navbar = () => {
       if (scrollTimeout) {
         clearTimeout(scrollTimeout);
       }
+      
+      // Check if user is at the top of the page (home section)
+      setIsAtTop(currentScrollY <= 100);
       
       // Handle navbar visibility based on scroll direction with throttling
       const scrollDifference = Math.abs(currentScrollY - lastScrollY);
@@ -90,7 +94,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`navbar ${!isNavbarVisible ? 'navbar-hidden' : ''}`}>
+    <nav className={`navbar ${!isNavbarVisible ? 'navbar-hidden' : ''} ${isAtTop ? 'navbar-at-top' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
           <img src="/images/Service_logo.png" alt="VirtualTour Pro" className="logo-img" />
