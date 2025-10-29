@@ -20,19 +20,20 @@ const Hero = () => {
       <div className="hero-container">
         <div className="hero-content">
           <p className="hero-tagline">
-            It leads from the online world to the physical space
+            Professional 360° Virtual Tour Development for Hotels Worldwide
           </p>
           <h1 className="hero-title">
-          Boost Your Booking Conversion Rate!
+            Boost Your Hotel Booking Conversion Rate with Immersive Virtual Tours!
           </h1>
           <p className="hero-subtitle">
-            We create personalized virtual tours that bring your clients directly into your space. Stand out from the competition and grab the attention of your target audience!
+            We create personalized 360° virtual tours that bring your guests directly into your hotel space. Stand out from the competition with interactive virtual reality experiences that increase bookings and guest confidence. Professional virtual tour development services for luxury resorts, boutique hotels, and budget accommodations worldwide.
           </p>
           <button 
             className="btn btn-red"
             onClick={() => scrollToSection('contact')}
+            aria-label="Contact us for virtual tour development services"
           >
-            CONTACT
+            GET YOUR VIRTUAL TOUR
           </button>
         </div>
       </div>

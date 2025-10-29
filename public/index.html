@@ -2,23 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/images/Service_logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#A8D8EA" />
-    <meta name="description" content="Professional 360° virtual tour development for hotels worldwide. Create immersive experiences that increase bookings and guest confidence." />
+    <meta name="description" content="Professional 360° virtual tour development for hotels worldwide. Create immersive experiences that increase bookings and guest confidence. Expert virtual tour services by Jovan Spasojevic." />
     
     <!-- Enhanced SEO Meta Tags -->
-    <meta name="keywords" content="virtual tour, 360 tour, hotel virtual tour, virtual tour development, immersive experience, hotel booking, tourism technology, virtual reality, interactive tour, hotel marketing" />
+    <meta name="keywords" content="virtual tour, 360 tour, hotel virtual tour, virtual tour development, immersive experience, hotel booking, tourism technology, virtual reality, interactive tour, hotel marketing, 360 panorama, virtual tour creator, hotel technology, booking conversion, guest experience, tourism innovation" />
     <meta name="author" content="Jovan Spasojevic" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="General" />
+    <meta name="distribution" content="Global" />
+    <meta name="target" content="all" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Virtual Tour Development Service - Professional 360° Tours for Hotels" />
-    <meta property="og:description" content="Professional 360° virtual tour development for hotels worldwide. Create immersive experiences that increase bookings and guest confidence." />
-    <meta property="og:image" content="%PUBLIC_URL%/images/Service_logo.png" />
+    <meta property="og:description" content="Professional 360° virtual tour development for hotels worldwide. Create immersive experiences that increase bookings and guest confidence. Expert virtual tour services by Jovan Spasojevic." />
+    <meta property="og:image" content="https://virtual-tour-service.com/images/Service_logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Virtual Tour Development Service Logo" />
     <meta property="og:url" content="https://virtual-tour-service.com" />
     <meta property="og:site_name" content="Virtual Tour Development Service" />
     <meta property="og:locale" content="en_US" />
@@ -27,60 +34,149 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Virtual Tour Development Service - Professional 360° Tours for Hotels" />
     <meta name="twitter:description" content="Professional 360° virtual tour development for hotels worldwide. Create immersive experiences that increase bookings and guest confidence." />
-    <meta name="twitter:image" content="%PUBLIC_URL%/images/Service_logo.png" />
+    <meta name="twitter:image" content="https://virtual-tour-service.com/images/Service_logo.png" />
+    <meta name="twitter:image:alt" content="Virtual Tour Development Service Logo" />
     <meta name="twitter:creator" content="@jovanspasojevic" />
+    <meta name="twitter:site" content="@jovanspasojevic" />
     
     <!-- Additional SEO Meta Tags -->
     <meta name="msapplication-TileColor" content="#A8D8EA" />
+    <meta name="msapplication-TileImage" content="/images/Service_logo.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Virtual Tour Service" />
+    <meta name="format-detection" content="telephone=no" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://virtual-tour-service.com" />
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" />
-    <link rel="preload" href="%PUBLIC_URL%/images/Service_logo.png" as="image" />
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="%PUBLIC_URL%/images/Service_logo.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/Service_logo.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     
     <!-- DNS Prefetch for External Resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
     
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/Service_logo.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="%PUBLIC_URL%/images/Service_logo.png" as="image" />
+    <link rel="preload" href="%PUBLIC_URL%/images/background.jpg" as="image" />
+    
+    <!-- Critical CSS inline for above-the-fold content -->
+    <style>
+      /* Critical CSS for initial render */
+      body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      #root { min-height: 100vh; }
+      .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+      .hero-title { font-size: 4.5rem; font-weight: 700; color: white; text-align: center; margin-bottom: 2rem; }
+      .hero-subtitle { font-size: 1.2rem; color: white; text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+      .btn-red { background: #dc3545; color: white; border: none; padding: 18px 50px; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; }
+    </style>
+    
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'" />
+    
     <title>Virtual Tour Development Service - Professional 360° Tours for Hotels</title>
     
-    <!-- Structured Data -->
+    <!-- Enhanced Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Virtual Tour Development Service",
-      "description": "Professional 360° virtual tour development for hotels worldwide",
+      "alternateName": "360 Virtual Tour Service",
+      "description": "Professional 360° virtual tour development for hotels worldwide. Create immersive experiences that increase bookings and guest confidence.",
       "url": "https://virtual-tour-service.com",
-      "logo": "https://virtual-tour-service.com/images/Service_logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://virtual-tour-service.com/images/Service_logo.png",
+        "width": 200,
+        "height": 200
+      },
+      "image": "https://virtual-tour-service.com/images/Service_logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+381-XX-XXX-XXXX",
         "contactType": "customer service",
-        "email": "spaskekl@gmail.com"
+        "email": "spaskekl@gmail.com",
+        "availableLanguage": "English"
       },
       "founder": {
         "@type": "Person",
         "name": "Jovan Spasojevic",
-        "email": "spaskekl@gmail.com"
+        "email": "spaskekl@gmail.com",
+        "jobTitle": "Founder & Virtual Tour Developer"
       },
       "sameAs": [
         "https://linkedin.com/in/jovan-spasojevic",
-        "https://github.com/jovanspasojevic"
+        "https://github.com/jovanspasojevic",
+        "https://360virtualtour.pro"
       ],
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "Serbia"
+      },
+      "areaServed": "Worldwide",
+      "serviceType": "Virtual Tour Development",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "50",
+        "bestRating": "5",
+        "worstRating": "1"
       }
+    }
+    </script>
+    
+    <!-- Service Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Virtual Tour Development Service",
+      "description": "Professional 360° virtual tour development for hotels worldwide",
+      "provider": {
+        "@type": "Organization",
+        "name": "Virtual Tour Development Service",
+        "founder": {
+          "@type": "Person",
+          "name": "Jovan Spasojevic",
+          "email": "spaskekl@gmail.com"
+        }
+      },
+      "serviceType": "Virtual Tour Development",
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "description": "Professional virtual tour development services",
+        "category": "Digital Marketing Services",
+        "priceRange": "$10-$20 per image"
+      }
+    }
+    </script>
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://virtual-tour-service.com"
+        }
+      ]
     }
     </script>
   </head>
