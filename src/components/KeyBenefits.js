@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './KeyBenefits.css';
+import { motion, useInView } from 'framer-motion';
 
 const KeyBenefits = () => {
   const benefits = [
@@ -33,34 +34,80 @@ const KeyBenefits = () => {
     }
   ];
 
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideInRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
   return (
     <section className="key-benefits">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={fadeInUp}
+        >
           <h2>Main Benefits</h2>
           <p>Discover how our virtual tour service transforms your hotel's online presence</p>
-        </div>
+        </motion.div>
         
-        <div className="benefits-list">
-          {benefits.map((benefit) => (
-            <div 
+        <div className="benefits-list" ref={containerRef}>
+          {benefits.map((benefit, index) => (
+            <motion.div 
               key={benefit.id} 
               className={`benefit-item ${benefit.direction}`}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              variants={fadeInUp}
+              transition={{ delay: index * 0.2 }}
             >
               <div className="benefit-content">
-                <div className="benefit-image">
+                <motion.div 
+                  className="benefit-image"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <img 
                     src={benefit.image} 
                     alt={benefit.title}
                     loading="lazy"
                   />
-                </div>
-                <div className="benefit-text">
+                </motion.div>
+                <motion.div 
+                  className="benefit-text"
+                  variants={benefit.direction === "left" ? slideInRight : slideInLeft}
+                >
                   <h3>{benefit.title}</h3>
                   <p>{benefit.description}</p>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

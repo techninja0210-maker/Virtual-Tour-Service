@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Downloads.css';
+import { motion, useInView } from 'framer-motion';
 
 const Downloads = () => {
   const [notification, setNotification] = useState({ show: false, message: '', type: 'success', leaving: false });
@@ -87,17 +88,42 @@ const Downloads = () => {
     }
   };
 
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
   return (
     <section id="downloads" className="downloads">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={fadeInUp}
+        >
           <h2>Service Documentation</h2>
           <p>Download our detailed service overviews to learn more about our virtual tour development capabilities</p>
-        </div>
+        </motion.div>
         
-        <div className="downloads-grid">
-          {downloadFiles.map((file) => (
-            <div key={file.id} className="download-card">
+        <div className="downloads-grid" ref={containerRef}>
+          {downloadFiles.map((file, index) => (
+            <motion.div 
+              key={file.id} 
+              className="download-card"
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              variants={fadeInUp}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.03, y: -5 }}
+            >
               <div className="download-card-header">
                 <div className="download-icon">
                   <i className={file.icon}></i>
@@ -142,16 +168,22 @@ const Downloads = () => {
                   <span>Click to Download</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         
-        <div className="downloads-note">
+        <motion.div 
+          className="downloads-note"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={fadeInUp}
+          transition={{ delay: 0.3 }}
+        >
           <div className="note-content">
             <i className="fas fa-info-circle"></i>
             <p>These documents contain detailed information about our virtual tour development services, pricing, and process. Feel free to download and review them at your convenience.</p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Notification */}

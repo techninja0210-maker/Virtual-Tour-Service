@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const Services = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -56,25 +58,52 @@ const Services = () => {
     }
   ];
 
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
   return (
     <section id="services" className="services">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={fadeInUp}
+        >
           <h2>Our Services</h2>
           <p>Comprehensive virtual tour solutions for all types of hotels</p>
-        </div>
-        <div className="services-grid">
+        </motion.div>
+        <div className="services-grid" ref={containerRef}>
           {services.map((service, index) => (
-            <div key={index} className="service-card fade-in-up">
-              <div 
+            <motion.div 
+              key={index} 
+              className="service-card"
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              variants={fadeInUp}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.05, y: -5 }}
+            >
+              <motion.div 
                 className="service-image"
                 onClick={() => openModal(service.image, service.title)}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
               >
                 <img src={service.image} alt={service.title} />
-              </div>
+              </motion.div>
               <h3>{service.title}</h3>
               <p dangerouslySetInnerHTML={{ __html: service.description }}></p>
-            </div>
+            </motion.div>
           ))}
         </div>
 

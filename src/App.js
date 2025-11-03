@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import './App.css';
 import backgroundImage from './images/background.jpg';
 import { HelmetProvider } from 'react-helmet-async';
@@ -6,6 +6,7 @@ import SEO from './components/SEO';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Lenis from 'lenis';
 
 // Lazy load components for better performance
 const About = lazy(() => import('./components/About'));
@@ -63,6 +64,30 @@ function App() {
       "category": "Digital Marketing Services"
     }
   };
+
+  // Initialize smooth scrolling with Lenis
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   return (
     <HelmetProvider>

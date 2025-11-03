@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -42,44 +43,90 @@ const Contact = () => {
     // Allow native submit to FormSubmit when valid
   };
 
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideInRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const contactItems = [
+    { icon: 'fas fa-user', title: 'Jovan Spasojevic', desc: 'Lead Developer & Project Manager' },
+    { icon: 'fas fa-envelope', title: 'Company Email', desc: 'jovan.spasojevic@360virtualtour.pro' },
+    { icon: 'fas fa-map-marker-alt', title: 'Service Area', desc: 'Serbia' }
+  ];
+
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={fadeInUp}
+        >
           <h2>Get In Touch</h2>
           <p>Ready to enhance your hotel's online presence? Let's discuss your virtual tour project</p>
-        </div>
-        <div className="contact-content">
-          <div className="contact-info">
-            <div className="contact-item">
-              <div className="contact-icon">
-                <i className="fas fa-user"></i>
-              </div>
-              <div className="contact-details">
-                <h3>Jovan Spasojevic</h3>
-                <p>Lead Developer & Project Manager</p>
-              </div>
-            </div>
-            <div className="contact-item">
-              <div className="contact-icon">
-                <i className="fas fa-envelope"></i>
-              </div>
-              <div className="contact-details">
-                <h3>Company Email</h3>
-                <p><a href="mailto:jovan.spasojevic@360virtualtour.pro">jovan.spasojevic@360virtualtour.pro</a></p>
-              </div>
-            </div>
-            <div className="contact-item">
-              <div className="contact-icon">
-                <i className="fas fa-map-marker-alt"></i>
-              </div>
-              <div className="contact-details">
-                <h3>Service Area</h3>
-                <p>Serbia</p>
-              </div>
-            </div>
-          </div>
-          <div className="contact-form">
+        </motion.div>
+        <div className="contact-content" ref={containerRef}>
+          <motion.div 
+            className="contact-info"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={slideInLeft}
+          >
+            {contactItems.map((item, index) => (
+              <motion.div 
+                key={index}
+                className="contact-item"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="contact-icon">
+                  <i className={item.icon}></i>
+                </div>
+                <div className="contact-details">
+                  <h3>{item.title}</h3>
+                  <p>
+                    {item.icon === 'fas fa-envelope' ? (
+                      <a href="mailto:jovan.spasojevic@360virtualtour.pro">{item.desc}</a>
+                    ) : (
+                      item.desc
+                    )}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+          <motion.div 
+            className="contact-form"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={slideInRight}
+          >
             <form onSubmit={handleSubmit} action="https://formsubmit.co/jovan.spasojevic@360virtualtour.pro" method="POST">
               {/* FormSubmit options */}
               <input type="hidden" name="_subject" value="New inquiry from 360VirtualTour Pro website" />
@@ -130,11 +177,16 @@ const Contact = () => {
                   placeholder="Tell us about your virtual tour project requirements..."
                 />
               </div>
-              <button type="submit" className="btn-submit">
+              <motion.button 
+                type="submit" 
+                className="btn-submit"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Send Message
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
         </div>
         {notification && (
           <div className={`notification notification-${notification.type}`}>

@@ -1,15 +1,63 @@
 import React from 'react';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const About = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideInRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const stats = [
+    { value: "5000+", label: "Usability Tested" },
+    { value: "98%", label: "User Satisfaction" },
+    { value: "100%", label: "Mobile Responsive" }
+  ];
+
   return (
     <section id="about" className="about">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={fadeInUp}
+        >
           <h2>About Us</h2>
           <p>Led by Jovan Spasojevic, we specialize exclusively in creating immersive virtual tours for hotels worldwide</p>
-        </div>
-        <div className="about-content">
-          <div className="about-text">
+        </motion.div>
+        <div className="about-content" ref={containerRef}>
+          <motion.div 
+            className="about-text"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={slideInLeft}
+          >
             <h3>Our Mission</h3>
             <p>
               We began with the goal of offering an interactive and detailed look at hotels, as traditional photos 
@@ -23,28 +71,39 @@ const About = () => {
             </p>
             
             <div className="stats">
-              <div className="stat">
-                <h4>5000+</h4>
-                <p>Usability Tested</p>
-              </div>
-              <div className="stat">
-                <h4>98%</h4>
-                <p>User Satisfaction</p>
-              </div>
-              <div className="stat">
-                <h4>100%</h4>
-                <p>Mobile Responsive</p>
-              </div>
+              {stats.map((stat, index) => (
+                <motion.div 
+                  key={index}
+                  className="stat"
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  variants={fadeInUp}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <h4>{stat.value}</h4>
+                  <p>{stat.label}</p>
+                </motion.div>
+              ))}
             </div>
-          </div>
-          <div className="about-image">
-            <div className="team-member-image">
+          </motion.div>
+          <motion.div 
+            className="about-image"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={slideInRight}
+          >
+            <motion.div 
+              className="team-member-image"
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.3 }}
+            >
               <img src="/images/Jovan_Spasojevic.png" alt="Jovan Spasojevic - Team Leader" />
               <div className="image-overlay">
                 <p>Jovan Spasojevic</p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -52,4 +111,3 @@ const About = () => {
 };
 
 export default About;
-
