@@ -95,8 +95,6 @@ const About = () => {
           >
             <motion.div 
               className="team-member-image"
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
             >
               <img src="/images/Jovan_Spasojevic.png" alt="Jovan Spasojevic - Team Leader" />
               <div className="image-overlay">

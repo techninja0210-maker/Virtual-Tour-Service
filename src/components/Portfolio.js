@@ -68,22 +68,15 @@ const Portfolio = () => {
         </motion.div>
         <div className="portfolio-grid" ref={containerRef}>
           {portfolioItems.map((item, index) => (
-            <motion.div 
-              key={index} 
+            <div 
+              key={index}
               className="portfolio-item"
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              variants={fadeInUp}
-              transition={{ delay: index * 0.15 }}
-              whileHover={{ scale: 1.05, y: -10 }}
             >
-              <motion.div 
+              <div 
                 className="portfolio-image"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3 }}
               >
                 <img src="/images/walking.png" alt="Virtual Tour" />
-              </motion.div>
+              </div>
               <div className="portfolio-content">
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
@@ -96,7 +89,7 @@ const Portfolio = () => {
                   View Tour <i className="fas fa-external-link-alt"></i>
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

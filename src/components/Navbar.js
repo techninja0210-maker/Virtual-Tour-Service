@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import smoothScrollTo from '../utils/smoothScrollTo';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,16 +18,7 @@ const Navbar = () => {
   };
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      // Scroll directly to the section without extra offset
-      // This will position the section content right at the top of the viewport
-      const offsetTop = element.offsetTop;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
+    smoothScrollTo(sectionId);
     closeMenu();
   };
 

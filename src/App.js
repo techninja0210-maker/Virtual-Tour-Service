@@ -53,7 +53,7 @@ function App() {
       "founder": {
         "@type": "Person",
         "name": "Jovan Spasojevic",
-        "email": "spaskekl@gmail.com"
+        "email": "j.virtualtour.ceo@gmail.com"
       }
     },
     "serviceType": "Virtual Tour Development",
@@ -77,6 +77,8 @@ function App() {
       touchMultiplier: 2,
     });
 
+    window.lenis = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -86,6 +88,9 @@ function App() {
 
     return () => {
       lenis.destroy();
+      if (window.lenis === lenis) {
+        delete window.lenis;
+      }
     };
   }, []);
 

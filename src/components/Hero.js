@@ -1,16 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import smoothScrollTo from '../utils/smoothScrollTo';
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
+    smoothScrollTo(sectionId);
   };
 
   const fadeInUp = {

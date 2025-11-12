@@ -55,15 +55,6 @@ const KeyBenefits = () => {
     }
   };
 
-  const slideInRight = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
-  };
-
   return (
     <section className="key-benefits">
       <div className="container">
@@ -101,7 +92,7 @@ const KeyBenefits = () => {
                 </motion.div>
                 <motion.div 
                   className="benefit-text"
-                  variants={benefit.direction === "left" ? slideInRight : slideInLeft}
+                  variants={slideInLeft}
                 >
                   <h3>{benefit.title}</h3>
                   <p>{benefit.description}</p>

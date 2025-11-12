@@ -1,15 +1,9 @@
 import React from 'react';
+import smoothScrollTo from '../utils/smoothScrollTo';
 
 const Footer = () => {
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
+    smoothScrollTo(sectionId);
   };
 
   return (
@@ -37,8 +31,9 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Contact</h3>
             <p>Jovan Spasojevic</p>
-            <p><a href="mailto:spaskekl@gmail.com">spaskekl@gmail.com</a></p>
+            <p><a href="mailto:j.virtualtour.ceo@gmail.com">j.virtualtour.ceo@gmail.com</a></p>
             <p>Worldwide 360 Virturl Tour</p>
+            <p><a href="mailto:jovan.spasojevic@360virtualtour.pro">jovan.spasojevic@360virtualtour.pro</a></p>
           </div>
         </div>
         <div className="footer-bottom">

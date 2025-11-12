@@ -153,7 +153,7 @@ This project is created for Jovan Spasojevic's virtual tour development service.
 ## 📞 Contact
 
 - **Developer**: Jovan Spasojevic
-- **Email**: spaskekl@gmail.com
+- **Email**: j.virtualtour.ceo@gmail.com
 - **Service**: Worldwide virtual tour development
 
 ---

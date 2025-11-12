@@ -87,10 +87,6 @@ const Services = () => {
             <motion.div 
               key={index} 
               className="service-card"
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              variants={fadeInUp}
-              transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.05, y: -5 }}
             >
               <motion.div 

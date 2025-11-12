@@ -69,12 +69,12 @@ const SEO = ({
             "@type": "ContactPoint",
             "telephone": "+381-XX-XXX-XXXX",
             "contactType": "customer service",
-            "email": "spaskekl@gmail.com"
+            "email": "j.virtualtour.ceo@gmail.com"
           },
           "founder": {
             "@type": "Person",
             "name": "Jovan Spasojevic",
-            "email": "spaskekl@gmail.com"
+            "email": "j.virtualtour.ceo@gmail.com"
           },
           "sameAs": [
             "https://linkedin.com/in/jovan-spasojevic",
